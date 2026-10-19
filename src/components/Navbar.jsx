@@ -1,18 +1,17 @@
 import { useEffect, useRef, useState } from 'react'
 import { Link } from 'react-router-dom'
+import Img from './Img'
 
 const SERVICE_ITEMS = [
   { label: 'Dry Cleaning & Specialty Garment Care', to: '/dry-cleaning' },
   { label: 'Laundry Services', to: '/laundry-services' },
   { label: 'Tailoring & Alterations', to: '/tailoring-alterations' },
-  { label: 'Bridal Gown Cleaning & Preservation', to: '/#service' },
+  { label: 'Bridal Gown Cleaning & Preservation', to: '/bridal-gown-cleaning' },
 ]
 
 const NAV_LINKS = [
   { label: 'Prices', to: '/#prices' },
-  { label: 'Coupons', to: '/#coupons' },
-  { label: 'Contact', to: '/#visit' },
-  { label: 'FAQ', to: '/#faq' },
+  { label: 'Contact', to: '/contact' },
   { label: 'Visit', to: '/#visit' },
 ]
 
@@ -46,16 +45,23 @@ function Chevron({ open }) {
 
 export default function Navbar() {
   const [open, setOpen] = useState(false)
-  const [services, setServices] = useState(false)
+  const [desktopServices, setDesktopServices] = useState(false)
+  const [mobileServices, setMobileServices] = useState(false)
   const dropdown = useRef(null)
 
-  // Close the desktop dropdown on an outside click or Escape.
+  // Close the desktop dropdown on an outside click or Escape. Only while it is
+  // open, and only for the desktop menu - the mobile accordion keeps its own
+  // state so this listener cannot fight its toggle.
   useEffect(() => {
+    if (!desktopServices) return
+
     function onPointerDown(event) {
-      if (dropdown.current && !dropdown.current.contains(event.target)) setServices(false)
+      if (dropdown.current && !dropdown.current.contains(event.target)) {
+        setDesktopServices(false)
+      }
     }
     function onKeyDown(event) {
-      if (event.key === 'Escape') setServices(false)
+      if (event.key === 'Escape') setDesktopServices(false)
     }
     document.addEventListener('pointerdown', onPointerDown)
     document.addEventListener('keydown', onKeyDown)
@@ -63,44 +69,45 @@ export default function Navbar() {
       document.removeEventListener('pointerdown', onPointerDown)
       document.removeEventListener('keydown', onKeyDown)
     }
-  }, [])
+  }, [desktopServices])
 
   const closeAll = () => {
     setOpen(false)
-    setServices(false)
+    setDesktopServices(false)
+    setMobileServices(false)
   }
 
   return (
     <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur">
-      <div className="mx-auto flex h-20 max-w-7xl items-center justify-between px-5 lg:px-10">
+      <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-5 lg:px-10">
         <Link to="/" className="shrink-0">
-          <img src="/assets/images/logo.png" alt="Bellmore Dry Cleaner" className="h-10 w-auto sm:h-11" />
+          <Img src="/assets/images/logo.webp" alt="Bellmore Dry Cleaner" className="h-12 w-auto sm:h-14" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex xl:gap-8">
           <div
             ref={dropdown}
             className="relative"
-            onMouseEnter={() => setServices(true)}
-            onMouseLeave={() => setServices(false)}
+            onMouseEnter={() => setDesktopServices(true)}
+            onMouseLeave={() => setDesktopServices(false)}
           >
             <button
               type="button"
-              onClick={() => setServices(true)}
-              aria-expanded={services}
+              onClick={() => setDesktopServices((v) => !v)}
+              aria-expanded={desktopServices}
               aria-haspopup="true"
               className="flex items-center gap-1.5 text-[15px] font-medium text-ink/80 transition-colors hover:text-brand"
             >
               Service
-              <Chevron open={services} />
+              <Chevron open={desktopServices} />
             </button>
 
             <div
-              className={`absolute left-1/2 top-full w-[20rem] -translate-x-1/2 pt-3 ${services ? '' : 'pointer-events-none'}`}
+              className={`absolute left-1/2 top-full w-[20rem] -translate-x-1/2 pt-3 ${desktopServices ? '' : 'pointer-events-none'}`}
             >
               <ul
                 className={`overflow-hidden rounded-xl border border-line bg-white py-2 shadow-lg shadow-ink/5 transition duration-150 ${
-                  services ? 'translate-y-0 opacity-100' : '-translate-y-1 opacity-0'
+                  desktopServices ? 'translate-y-0 opacity-100' : '-translate-y-1 opacity-0'
                 }`}
               >
                 {SERVICE_ITEMS.map((item) => (
@@ -157,15 +164,15 @@ export default function Navbar() {
           <nav className="mx-auto flex max-w-7xl flex-col px-5 py-3">
             <button
               type="button"
-              onClick={() => setServices((v) => !v)}
-              aria-expanded={services}
-              className="flex items-center justify-between py-3 text-[15px] font-medium text-ink/80"
+              onClick={() => setMobileServices((v) => !v)}
+              aria-expanded={mobileServices}
+              className="flex w-full items-center justify-between py-3 text-[15px] font-medium text-ink/80"
             >
               Service
-              <Chevron open={services} />
+              <Chevron open={mobileServices} />
             </button>
 
-            {services && (
+            {mobileServices && (
               <ul className="mb-1 border-l border-line pl-4">
                 {SERVICE_ITEMS.map((item) => (
                   <li key={item.label}>

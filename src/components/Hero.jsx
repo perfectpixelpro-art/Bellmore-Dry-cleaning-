@@ -1,7 +1,9 @@
+import Img from './Img'
+
 const HIGHLIGHTS = [
-  { icon: '/assets/icons/hero1icon.png', lines: ['Same day', 'service'] },
-  { icon: '/assets/icons/hero2icon.png', lines: ['Tailor on the', 'premises'] },
-  { icon: '/assets/icons/hero3icon.png', lines: ['4.x on', 'Google'] },
+  { icon: '/assets/icons/hero1icon.webp', lines: ['Same day', 'service'] },
+  { icon: '/assets/icons/hero2icon.webp', lines: ['Tailor on the', 'premises'] },
+  { icon: '/assets/icons/hero3icon.webp', lines: ['4x on', 'Google'] },
 ]
 
 export default function Hero() {
@@ -30,7 +32,7 @@ export default function Hero() {
             </a>
 
             <a
-              href="https://maps.google.com/?q=Bellmore+Dry+Cleaner+North+Bellmore+NY"
+              href="https://www.google.com/maps/search/?api=1&query=1904+Newbridge+Road%2C+North+Bellmore%2C+NY+11710"
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-brand/40 px-7 py-3.5 text-[15px] font-semibold text-brand transition-colors hover:bg-brand-soft"
@@ -57,7 +59,7 @@ export default function Hero() {
                 className={`flex items-center gap-3 ${i > 0 ? 'sm:border-l sm:border-line sm:pl-6' : ''}`}
               >
                 <span className="flex h-11 w-11 shrink-0 items-center justify-center rounded-full bg-brand-soft">
-                  <img src={item.icon} alt="" aria-hidden="true" className="h-5 w-5 object-contain" />
+                  <Img src={item.icon} alt="" aria-hidden="true" className="h-5 w-5 object-contain" />
                 </span>
                 <span className="text-[14px] font-medium leading-5 text-ink/80">
                   {item.lines[0]}
@@ -71,8 +73,8 @@ export default function Hero() {
 
         {/* Image */}
         <div className="relative w-full max-w-[520px] justify-self-center lg:justify-self-end">
-          <img
-            src="/assets/images/herobell.png"
+          <Img
+            src="/assets/images/herobell.webp"
             alt="Freshly laundered shirts on hangers at Bellmore Dry Cleaner"
             className="w-full rounded-3xl object-cover"
           />

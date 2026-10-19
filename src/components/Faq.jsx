@@ -57,7 +57,7 @@ export default function Faq({ items = HOME_FAQS }) {
   return (
     <section
       id="faq"
-      className="mx-auto max-w-[1920px] px-5 pb-14 sm:px-8 lg:px-[100px] lg:pb-20 xl:px-[160px] 2xl:px-[250px]"
+      className="mx-auto max-w-[1920px] px-5 pb-14 sm:px-8 lg:px-[60px] lg:pb-20 xl:px-[120px] 2xl:px-[250px]"
     >
       <h2 className="text-center text-[26px] font-extrabold tracking-[-0.02em] text-ink sm:text-[30px] lg:text-[34px]">
         Frequently Asked Questions

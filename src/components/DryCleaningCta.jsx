@@ -1,3 +1,5 @@
+import Img from './Img'
+
 // The banner is a single piece of artwork; the two anchors sit over the phone
 // and email buttons drawn into it, positioned as percentages so they track the
 // image at any width.
@@ -18,8 +20,8 @@ export default function DryCleaningCta() {
   return (
     <section className="mx-auto max-w-[1920px] px-5 pb-14 sm:px-8 lg:px-[60px] lg:pb-20 xl:px-[120px] 2xl:px-[250px]">
       <div className="relative overflow-hidden rounded-3xl">
-        <img
-          src="/assets/images/DryCleaningsection.png"
+        <Img
+          src="/assets/images/DryCleaningsection.webp"
           alt="Fast, reliable dry cleaning in Bellmore, NY for your busy schedule. Got a suit for Friday or a stack of shirts that need pressing? Bring them in by 9 AM and we can have them ready the same day. Everything else takes 3 to 4 days."
           loading="lazy"
           className="w-full"

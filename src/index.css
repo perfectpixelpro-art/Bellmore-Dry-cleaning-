@@ -3,6 +3,9 @@
 
 @theme {
   --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+  /* SF Pro ships with Apple systems; -apple-system resolves to it there and
+     falls back to Inter elsewhere so the two stay visually close. */
+  --font-display: 'SF Pro Display', 'SF Pro Text', -apple-system, BlinkMacSystemFont, 'Inter', sans-serif;
 
   --color-brand: #3076ce;
   --color-brand-dark: #275fa8;
@@ -14,6 +17,16 @@
 
 html {
   scroll-behavior: smooth;
+}
+
+/* Headings use the display face; body copy stays on Inter. */
+h1,
+h2,
+h3,
+h4,
+h5,
+h6 {
+  font-family: var(--font-display);
 }
 
 body {
@@ -28,4 +41,9 @@ body {
 
 .h1-service {
   font-size: clamp(1.65rem, 3.2vw, 3rem);
+}
+
+/* Clear the sticky header when an anchor link scrolls a section into view. */
+section[id] {
+  scroll-margin-top: 7rem;
 }

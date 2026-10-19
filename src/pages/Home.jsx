@@ -5,10 +5,16 @@ import Prices from '../components/Prices'
 import Coupons from '../components/Coupons'
 import Faq from '../components/Faq'
 import Visit from '../components/Visit'
+import PageMeta from '../components/PageMeta'
 
 export default function Home() {
   return (
-    <main>
+    <>
+      <PageMeta
+        title="Best Dry Cleaner in North Bellmore, NY"
+        description="Same-day dry cleaning in North Bellmore, NY. Drop off by 9 AM for same-day service, with tailoring on the premises. Call (516) 656-1221."
+      />
+      <main>
       <Hero />
       <Services />
       <SameDayBanner />
@@ -16,6 +22,7 @@ export default function Home() {
       <Coupons />
       <Visit />
       <Faq />
-    </main>
+      </main>
+    </>
   )
 }

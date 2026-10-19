@@ -1,8 +1,10 @@
 import { useState } from 'react'
+import { PHONE } from '../data/business'
 
-// FormSubmit relays the form to this inbox. The first submission sends a
-// one-time confirmation email that must be accepted before messages arrive.
-const ENDPOINT = 'https://formsubmit.co/ajax/chris@bellmoredrycleaner.com'
+// Posted to the PHP handler in public/, which runs on the cPanel host and
+// mails the enquiry to Chris and Chirag. There is no PHP in the Vite dev
+// server, so submissions only work against the deployed site.
+const ENDPOINT = '/send-enquiry.php'
 
 const SERVICES = [
   'Dry cleaning & shirt laundering',
@@ -18,26 +20,30 @@ const field =
 
 export default function EnquiryForm() {
   const [status, setStatus] = useState('idle') // idle | sending | sent | error
+  const [error, setError] = useState('')
 
   async function handleSubmit(event) {
     event.preventDefault()
     const form = event.currentTarget
     setStatus('sending')
+    setError('')
 
     try {
       const response = await fetch(ENDPOINT, {
         method: 'POST',
         headers: { 'Content-Type': 'application/json', Accept: 'application/json' },
-        body: JSON.stringify({
-          ...Object.fromEntries(new FormData(form)),
-          _subject: 'New enquiry from bellmoredrycleaner.com',
-          _template: 'table',
-        }),
+        body: JSON.stringify(Object.fromEntries(new FormData(form))),
       })
-      if (!response.ok) throw new Error('Request failed')
+
+      const result = await response.json().catch(() => ({}))
+      if (!response.ok || !result.ok) {
+        throw new Error(result.error || 'Request failed')
+      }
+
       form.reset()
       setStatus('sent')
-    } catch {
+    } catch (caught) {
+      setError(caught.message)
       setStatus('error')
     }
   }
@@ -48,14 +54,14 @@ export default function EnquiryForm() {
 
       <form onSubmit={handleSubmit} className="mt-5 space-y-4">
         <div className="grid gap-4 sm:grid-cols-2">
-          <input name="Full name" type="text" required placeholder="Full name" className={field} />
-          <input name="Phone number" type="tel" required placeholder="Phone number" className={field} />
+          <input name="name" type="text" required autoComplete="name" placeholder="Full name" className={field} />
+          <input name="phone" type="tel" required autoComplete="tel" placeholder="Phone number" className={field} />
         </div>
 
-        <input name="Email address" type="email" required placeholder="Email address" className={field} />
+        <input name="email" type="email" required autoComplete="email" placeholder="Email address" className={field} />
 
         <div className="relative">
-          <select name="Service required" required defaultValue="" className={`${field} appearance-none pr-11`}>
+          <select name="service" required defaultValue="" className={`${field} appearance-none pr-11`}>
             <option value="" disabled>
               Service required
             </option>
@@ -80,7 +86,7 @@ export default function EnquiryForm() {
         </div>
 
         <input
-          name="Preferred drop-off date"
+          name="date"
           type="text"
           placeholder="Preferred drop-off date"
           onFocus={(e) => {
@@ -93,10 +99,20 @@ export default function EnquiryForm() {
         />
 
         <textarea
-          name="Message"
+          name="message"
           rows={4}
           placeholder="Message or additional details"
           className={`${field} resize-none`}
+        />
+
+        {/* Spam trap: hidden from people, irresistible to bots. */}
+        <input
+          name="company"
+          type="text"
+          tabIndex={-1}
+          autoComplete="off"
+          aria-hidden="true"
+          className="absolute left-[-9999px] h-px w-px opacity-0"
         />
 
         <button
@@ -114,7 +130,7 @@ export default function EnquiryForm() {
         )}
         {status === 'error' && (
           <p role="alert" className="text-[14px] font-medium text-red-600">
-            Something went wrong. Please call (516) 656-1221 instead.
+            {error || `Something went wrong. Please call ${PHONE} instead.`}
           </p>
         )}
       </form>

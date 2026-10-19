@@ -1,10 +1,12 @@
+import Img from './Img'
+
 const IMAGES = [
   {
-    src: '/assets/images/tailorhero1.png',
+    src: '/assets/images/tailorhero1.webp',
     alt: 'A tailor chalking an alteration mark on the shoulder of a pinstriped suit jacket',
   },
   {
-    src: '/assets/images/tailorhero2.png',
+    src: '/assets/images/tailorhero2.webp',
     alt: 'A tailor measuring a suit jacket lapel with a tape measure during a fitting',
   },
 ]
@@ -43,7 +45,7 @@ export default function TailoringHero() {
             </a>
 
             <a
-              href="https://maps.google.com/?q=Bellmore+Dry+Cleaner+North+Bellmore+NY"
+              href="https://www.google.com/maps/search/?api=1&query=1904+Newbridge+Road%2C+North+Bellmore%2C+NY+11710"
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-brand/40 px-7 py-3.5 text-[15px] font-semibold text-brand transition-colors hover:bg-brand-soft"
@@ -66,7 +68,7 @@ export default function TailoringHero() {
 
         <div className="grid grid-cols-2 gap-4 sm:gap-5 lg:justify-self-end">
           {IMAGES.map((image) => (
-            <img
+            <Img
               key={image.src}
               src={image.src}
               alt={image.alt}

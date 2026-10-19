@@ -1,14 +1,16 @@
+import Img from './Img'
+
 const COUPONS = [
   {
     badge: 'FREE',
-    icon: '/assets/icons/icon1.png',
+    icon: '/assets/icons/icon1.webp',
     title: 'Laundered shirt',
     body: <>No purchase necessary.</>,
     expires: '12/12/2026',
   },
   {
     badge: 'FREE',
-    icon: '/assets/icons/icon2.png',
+    icon: '/assets/icons/icon2.webp',
     title: 'Dry-cleaned garment',
     body: (
       <>
@@ -19,7 +21,7 @@ const COUPONS = [
   },
   {
     badge: '$10 OFF',
-    icon: '/assets/icons/icon3.png',
+    icon: '/assets/icons/icon3.webp',
     title: 'Bedding',
     body: (
       <>
@@ -35,7 +37,7 @@ export default function Coupons() {
   return (
     <section
       id="coupons"
-      className="mx-auto max-w-[1920px] px-5 pb-14 sm:px-8 lg:px-[100px] lg:pb-20 xl:px-[160px] 2xl:px-[250px]"
+      className="mx-auto max-w-[1920px] px-5 pb-14 sm:px-8 lg:px-[60px] lg:pb-20 xl:px-[120px] 2xl:px-[250px]"
     >
       <div className="text-center">
         <h2 className="text-[26px] font-extrabold tracking-[-0.02em] text-ink sm:text-[30px] lg:text-[34px]">
@@ -56,7 +58,7 @@ export default function Coupons() {
               {coupon.badge}
             </span>
 
-            <img src={coupon.icon} alt="" aria-hidden="true" className="h-14 w-14 object-contain" />
+            <Img src={coupon.icon} alt="" aria-hidden="true" className="h-14 w-14 object-contain" />
 
             <h3 className="mt-4 text-[19px] font-bold text-ink">{coupon.title}</h3>
             <p className="mt-2 max-w-[20rem] text-[14px] leading-6 text-muted">{coupon.body}</p>

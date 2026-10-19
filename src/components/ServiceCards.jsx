@@ -1,7 +1,8 @@
 import { Link } from 'react-router-dom'
+import Img from './Img'
 
 // Scalloped badge with a tick. Inline so it inherits the brand colour; swap
-// for an <img> if a PNG lands in /assets/icons.
+// for an <Img> if a PNG lands in /assets/icons.
 function BadgeCheck({ className = 'h-9 w-9' }) {
   return (
     <svg
@@ -51,11 +52,7 @@ export default function ServiceCards({ titleAccent, titleRest, intro, items }) {
           <li key={item.title}>
             <Link
               to={item.to}
-              className={`flex h-full flex-col rounded-2xl border p-5 transition-colors ${
-                item.featured
-                  ? 'border-brand/30 bg-brand-soft/50 hover:bg-brand-soft'
-                  : 'border-line bg-white hover:border-brand/40 hover:bg-brand-soft/30'
-              }`}
+              className="flex h-full flex-col rounded-2xl border border-line bg-white p-5 transition-colors hover:border-brand/40 hover:bg-brand-soft/40"
             >
               <BadgeCheck className="h-9 w-9 shrink-0 text-ink/70" />
               <h3 className="mt-4 text-[15px] font-bold leading-snug text-brand">

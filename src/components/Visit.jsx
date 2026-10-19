@@ -27,7 +27,7 @@ export default function Visit() {
   return (
     <section
       id="visit"
-      className="mx-auto max-w-[1920px] px-5 pb-16 sm:px-8 lg:px-[100px] lg:pb-24 xl:px-[160px] 2xl:px-[250px]"
+      className="mx-auto max-w-[1920px] px-5 pb-16 sm:px-8 lg:px-[60px] lg:pb-24 xl:px-[120px] 2xl:px-[250px]"
     >
       <div className="grid gap-10 lg:grid-cols-2 lg:items-start lg:gap-14">
         {/* Map + details */}

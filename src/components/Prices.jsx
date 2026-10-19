@@ -2,7 +2,7 @@ import PriceIcon from './PriceIcon'
 
 const LEFT = [
   { icon: 'shirt', label: 'Shirt, laundered on hanger', price: '$2.75' },
-  { icon: 'pants', label: 'Pants', price: '$8.00' },
+  { icon: 'pants', label: 'Pants', price: '$8.00', from: true },
   { icon: 'skirt', label: 'Skirts', price: '$7.00', from: true },
   { icon: 'suit', label: 'Two-piece suit', price: '$18.00', from: true },
   { icon: 'dress', label: 'Dress', price: '$16.00', from: true },
@@ -25,7 +25,9 @@ function Row({ item, last }) {
     >
       <span className="flex min-w-0 items-center gap-3">
         <PriceIcon name={item.icon} className="h-5 w-5 shrink-0 text-brand" />
-        <span className="truncate text-[14px] text-muted">{item.label}</span>
+        <span className="truncate text-[14px] text-muted" title={item.label}>
+          {item.label}
+        </span>
       </span>
       <span className="shrink-0 whitespace-nowrap text-[15px] font-bold text-ink">
         {item.from && <span className="mr-1 text-[12px] font-medium text-muted">from</span>}
@@ -39,7 +41,7 @@ export default function Prices() {
   return (
     <section
       id="prices"
-      className="mx-auto max-w-[1920px] px-5 py-14 sm:px-8 lg:px-[100px] lg:py-20 xl:px-[160px] 2xl:px-[250px]"
+      className="mx-auto max-w-[1920px] px-5 py-14 sm:px-8 lg:px-[60px] lg:py-20 xl:px-[120px] 2xl:px-[250px]"
     >
       {/* Heading + note */}
       <div className="grid gap-6 lg:grid-cols-2 lg:gap-16">

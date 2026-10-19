@@ -1,3 +1,5 @@
+import Img from './Img'
+
 // Image left, copy right on desktop. On mobile the order flips so the
 // heading is read before the photo, which is why the image carries
 // `order-last lg:order-first` rather than simply coming first in the markup.
@@ -5,8 +7,8 @@ export default function ShirtLaundering() {
   return (
     <section className="mx-auto max-w-[1920px] px-5 pb-14 sm:px-8 lg:px-[60px] lg:pb-20 xl:px-[120px] 2xl:px-[250px]">
       <div className="grid items-center gap-10 lg:grid-cols-2 lg:gap-16 xl:gap-20">
-        <img
-          src="/assets/images/laundryservice2.png"
+        <Img
+          src="/assets/images/laundryservice2.webp"
           alt="A dress shirt being pressed on an ironing board, with freshly laundered shirts on hangers below"
           loading="lazy"
           className="order-last w-full max-w-[520px] justify-self-center rounded-2xl object-cover lg:order-first lg:justify-self-start"

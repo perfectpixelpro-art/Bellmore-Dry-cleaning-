@@ -1,4 +1,20 @@
-export default function ServiceHero({ titleTop, titleAccent, titleBottom, intro, note, image, imageAlt }) {
+import Img from './Img'
+
+// `titleFlow` lets the accent run wrap inline with the rest of the heading
+// instead of sitting on its own line, and `intro` takes a string or an array
+// of paragraphs.
+export default function ServiceHero({
+  titleTop,
+  titleAccent,
+  titleBottom,
+  titleFlow = false,
+  intro,
+  note,
+  image,
+  imageAlt,
+}) {
+  const paragraphs = Array.isArray(intro) ? intro : [intro]
+
   return (
     <section className="mx-auto max-w-[1920px] px-5 pt-12 pb-16 sm:px-8 lg:px-[60px] lg:pt-16 lg:pb-24 xl:px-[120px] 2xl:px-[250px]">
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24 2xl:gap-32">
@@ -7,19 +23,26 @@ export default function ServiceHero({ titleTop, titleAccent, titleBottom, intro,
             {titleTop && (
               <>
                 {titleTop}
-                <br />
+                {titleFlow ? ' ' : <br />}
               </>
             )}
             <span className="text-brand">{titleAccent}</span>
             {titleBottom && (
               <>
-                <br />
+                {titleFlow ? ' ' : <br />}
                 {titleBottom}
               </>
             )}
           </h1>
 
-          <p className="mt-5 text-[16px] leading-7 text-muted">{intro}</p>
+          {paragraphs.map((paragraph, i) => (
+            <p
+              key={paragraph}
+              className={`text-[15px] leading-7 text-muted sm:text-[16px] ${i === 0 ? 'mt-5' : 'mt-4'}`}
+            >
+              {paragraph}
+            </p>
+          ))}
 
           <div className="mt-7 flex flex-wrap items-center gap-4">
             <a
@@ -30,7 +53,7 @@ export default function ServiceHero({ titleTop, titleAccent, titleBottom, intro,
             </a>
 
             <a
-              href="https://maps.google.com/?q=Bellmore+Dry+Cleaner+North+Bellmore+NY"
+              href="https://www.google.com/maps/search/?api=1&query=1904+Newbridge+Road%2C+North+Bellmore%2C+NY+11710"
               target="_blank"
               rel="noreferrer"
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-brand/40 px-7 py-3.5 text-[15px] font-semibold text-brand transition-colors hover:bg-brand-soft"
@@ -54,7 +77,7 @@ export default function ServiceHero({ titleTop, titleAccent, titleBottom, intro,
         </div>
 
         <div className="relative w-full max-w-[520px] justify-self-center lg:justify-self-end">
-          <img src={image} alt={imageAlt} className="w-full rounded-3xl object-cover" />
+          <Img src={image} alt={imageAlt} className="w-full rounded-3xl object-cover" />
         </div>
       </div>
     </section>

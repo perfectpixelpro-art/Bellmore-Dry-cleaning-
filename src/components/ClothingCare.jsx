@@ -1,3 +1,5 @@
+import Img from './Img'
+
 const POINTS = [
   <>
     Short on time?{' '}
@@ -28,8 +30,8 @@ export default function ClothingCare() {
           <ul className="mt-6 space-y-4 lg:space-y-5">
             {POINTS.map((point, i) => (
               <li key={i} className="flex items-start gap-3 sm:gap-4">
-                <img
-                  src="/assets/icons/laundryicon2.png"
+                <Img
+                  src="/assets/icons/laundryicon2.webp"
                   alt=""
                   aria-hidden="true"
                   className="mt-0.5 h-6 w-6 shrink-0 object-contain sm:h-7 sm:w-7"
@@ -40,8 +42,8 @@ export default function ClothingCare() {
           </ul>
         </div>
 
-        <img
-          src="/assets/images/tailor3.png"
+        <Img
+          src="/assets/images/tailor3.webp"
           alt="Hands mending a blue knitted sweater with a needle and reels of cotton thread"
           loading="lazy"
           className="w-full max-w-[460px] justify-self-center rounded-2xl object-cover lg:justify-self-end"

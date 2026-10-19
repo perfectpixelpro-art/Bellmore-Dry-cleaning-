@@ -3,15 +3,13 @@ import { Link } from 'react-router-dom'
 const LINKS = [
   { label: 'Services', to: '/#service' },
   { label: 'Prices', to: '/#prices' },
-  { label: 'Coupons', to: '/#coupons' },
-  { label: 'FAQ', to: '/#faq' },
   { label: 'Visit', to: '/#visit' },
 ]
 
 export default function Footer() {
   return (
     <footer className="bg-[#0f1b2d] text-white">
-      <div className="mx-auto max-w-[1920px] px-5 py-10 sm:px-8 lg:px-[100px] lg:py-12 xl:px-[160px] 2xl:px-[250px]">
+      <div className="mx-auto max-w-[1920px] px-5 py-10 sm:px-8 lg:px-[60px] lg:py-12 xl:px-[120px] 2xl:px-[250px]">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div>
             <p className="text-[17px] font-bold tracking-[-0.01em]">Bellmore Dry Cleaner</p>

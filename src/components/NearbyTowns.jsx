@@ -1,3 +1,5 @@
+import Img from './Img'
+
 export default function NearbyTowns() {
   return (
     <section className="mx-auto max-w-[1920px] px-5 pb-16 sm:px-8 lg:px-[60px] lg:pb-24 xl:px-[120px] 2xl:px-[250px]">
@@ -23,8 +25,8 @@ export default function NearbyTowns() {
           </p>
         </div>
 
-        <img
-          src="/assets/images/DryCleaning2.png"
+        <Img
+          src="/assets/images/DryCleaning2.webp"
           alt="A Bellmore Dry Cleaner garment bag being handed over at a customer's door"
           loading="lazy"
           className="w-full rounded-2xl object-cover"

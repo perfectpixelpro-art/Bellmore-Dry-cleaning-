@@ -1,3 +1,5 @@
+import Img from './Img'
+
 // Copy left, image right on desktop; the image drops below the copy on mobile
 // so the heading leads, matching the other sections on this page.
 export default function ShirtPressingTowns() {
@@ -30,8 +32,8 @@ export default function ShirtPressingTowns() {
           </a>
         </div>
 
-        <img
-          src="/assets/images/laundry4.png"
+        <Img
+          src="/assets/images/laundry4.webp"
           alt="Freshly pressed dress shirts in grey, white, blue and cream hanging on a rail"
           loading="lazy"
           className="w-full max-w-[420px] justify-self-center rounded-2xl object-cover lg:justify-self-end"

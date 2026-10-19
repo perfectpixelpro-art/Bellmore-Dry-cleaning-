@@ -1,4 +1,4 @@
-import { useState } from 'react'
+import ImageAccordion from './ImageAccordion'
 
 const PANELS = [
   {
@@ -26,63 +26,16 @@ const PANELS = [
 ]
 
 export default function GownAndAlterations() {
-  const [open, setOpen] = useState(0)
-
   return (
     <section className="mx-auto max-w-[1920px] px-5 pb-14 sm:px-8 lg:px-[60px] lg:pb-20 xl:px-[120px] 2xl:px-[250px]">
-      <div className="grid gap-8 lg:grid-cols-2 lg:items-start lg:gap-12">
-        <img
-          src="/assets/images/tailor2.png"
-          alt="Two staff members brushing and cleaning a lace wedding gown on a hanger"
-          loading="lazy"
-          className="w-full rounded-2xl object-cover lg:max-w-[460px]"
-        />
-
-        <ul>
-          {PANELS.map((panel, i) => {
-            const isOpen = open === i
-            const panelId = `tailoring-panel-${i}`
-
-            return (
-              <li key={panel.title} className={i === 0 ? '' : 'border-t border-line'}>
-                <h2>
-                  <button
-                    type="button"
-                    onClick={() => setOpen(isOpen ? -1 : i)}
-                    aria-expanded={isOpen}
-                    aria-controls={panelId}
-                    className="flex w-full items-center justify-between gap-4 py-4 text-left"
-                  >
-                    <span className="text-[17px] font-bold leading-6 text-ink sm:text-[19px]">
-                      {panel.title}
-                    </span>
-                    <svg
-                      className={`h-4 w-4 shrink-0 text-brand transition-transform duration-200 ${isOpen ? 'rotate-180' : ''}`}
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="currentColor"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                      aria-hidden="true"
-                    >
-                      <path d="m6 9 6 6 6-6" />
-                    </svg>
-                  </button>
-                </h2>
-
-                <div id={panelId} hidden={!isOpen} className="pb-5">
-                  {panel.body.map((paragraph) => (
-                    <p key={paragraph} className="mt-2 text-[14px] leading-7 text-muted first:mt-0">
-                      {paragraph}
-                    </p>
-                  ))}
-                </div>
-              </li>
-            )
-          })}
-        </ul>
-      </div>
+      <ImageAccordion
+        image="/assets/images/tailor2.webp"
+        imageAlt="Two staff members brushing and cleaning a lace wedding gown on a hanger"
+        panels={PANELS}
+        idPrefix="tailoring-panel"
+        panelTag="h2"
+        imageClassName="w-full rounded-2xl object-cover lg:max-w-[460px]"
+      />
     </section>
   )
 }

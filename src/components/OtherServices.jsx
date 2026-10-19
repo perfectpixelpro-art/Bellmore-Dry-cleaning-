@@ -1,4 +1,5 @@
 import { Link } from 'react-router-dom'
+import Img from './Img'
 
 const ITEMS = [
   {
@@ -18,7 +19,7 @@ const ITEMS = [
   },
   {
     title: 'Bridal Gown Cleaning & Preservation',
-    to: '/#service',
+    to: '/bridal-gown-cleaning',
     body: (
       <>
         Dry cleaning plus a wedding box for $195. It takes about a week. We don't
@@ -42,8 +43,8 @@ export default function OtherServices() {
               to={item.to}
               className="flex h-full flex-col rounded-2xl border border-brand/25 bg-brand-soft/40 p-5 transition-colors hover:border-brand/50 hover:bg-brand-soft"
             >
-              <img
-                src="/assets/icons/DryCleaningicon.png"
+              <Img
+                src="/assets/icons/DryCleaningicon.webp"
                 alt=""
                 aria-hidden="true"
                 className="h-9 w-9 object-contain"

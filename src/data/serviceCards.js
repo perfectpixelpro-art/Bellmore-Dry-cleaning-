@@ -1,11 +1,10 @@
-// Card copy for the "other services" grids. Each page highlights a different
-// card and words its own entries, so the sets live side by side here.
+// Card copy for the "other services" grids. Each page words its own entries,
+// so the sets live side by side here.
 export const LAUNDRY_SERVICE_CARDS = [
   {
     title: 'Dry Cleaning & Specialty Garment Care',
     to: '/dry-cleaning',
     body: 'We clean a wide range of garments and specialty items. Stain removal is available.',
-    featured: true,
   },
   {
     title: 'Shirt Laundering & Laundry Services',
@@ -20,7 +19,7 @@ export const LAUNDRY_SERVICE_CARDS = [
   },
   {
     title: 'Bridal Gown Cleaning & Preservation',
-    to: '/#service',
+    to: '/bridal-gown-cleaning',
     body: 'Wedding gown dry cleaning and boxing is $195 and takes about one week. Long-term storage is not available.',
   },
 ]
@@ -30,7 +29,6 @@ export const TAILORING_SERVICE_CARDS = [
     title: 'Dry Cleaning & Specialty Garment Care',
     to: '/dry-cleaning',
     body: 'Professional cleaning and care for your garments.',
-    featured: true,
   },
   {
     title: 'Shirt Laundering & Laundry Services',
@@ -45,7 +43,7 @@ export const TAILORING_SERVICE_CARDS = [
   },
   {
     title: 'Bridal Gown Cleaning & Preservation',
-    to: '/#service',
+    to: '/bridal-gown-cleaning',
     body: 'Dry cleaning and a wedding box for $195. Allow about one week. No long-term storage.',
   },
 ]

@@ -1,23 +1,24 @@
 import { useCallback, useEffect, useRef, useState } from 'react'
+import Img from './Img'
 
 const SERVICES = [
   {
-    image: '/assets/images/service1.png',
+    image: '/assets/images/service1.webp',
     title: 'Dry cleaning & shirt laundering',
     text: 'Suits, dresses, slacks and everyday shirts - pressed and on hangers, ready to wear.',
   },
   {
-    image: '/assets/images/service2.png',
+    image: '/assets/images/service2.webp',
     title: 'Alterations & custom tailoring',
     text: 'Hems, tapering, sleeves and zippers, done right here on the premises.',
   },
   {
-    image: '/assets/images/service3.png',
+    image: '/assets/images/service3.webp',
     title: 'Wedding gown care',
     text: 'Specialized cleaning for the dress before or after the big day. Ask about preservation.',
   },
   {
-    image: '/assets/images/service4.png',
+    image: '/assets/images/service4.webp',
     title: 'Leather & suede',
     text: 'Jackets, coats and more, cleaned with the care these materials need.',
   },
@@ -66,7 +67,7 @@ export default function Services() {
   }
 
   return (
-    <section id="service" className="mx-auto max-w-[1920px] px-5 py-14 sm:px-8 lg:px-[100px] lg:py-20 xl:px-[160px] 2xl:px-[250px]">
+    <section id="service" className="mx-auto max-w-[1920px] px-5 py-14 sm:px-8 lg:px-[60px] lg:py-20 xl:px-[120px] 2xl:px-[250px]">
       {/* Heading */}
       <div className="flex flex-col gap-6 sm:flex-row sm:items-start sm:justify-between">
         <h2 className="text-[28px] font-extrabold leading-tight tracking-[-0.02em] text-ink sm:text-[32px] lg:text-[36px]">
@@ -109,7 +110,7 @@ export default function Services() {
             key={service.title}
             className="flex w-[78%] shrink-0 snap-start flex-col rounded-2xl border border-line bg-white p-3 shadow-[0_1px_2px_rgba(16,24,40,0.04)] sm:w-[46%] lg:w-[31%] xl:w-[23.5%]"
           >
-            <img
+            <Img
               src={service.image}
               alt={service.title}
               loading="lazy"

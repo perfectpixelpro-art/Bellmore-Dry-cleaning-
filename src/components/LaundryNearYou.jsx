@@ -1,3 +1,5 @@
+import Img from './Img'
+
 const POINTS = [
   'Bellmore Dry Cleaner is a laundry cleaning service Bellmore residents can reach easily. If you need laundry near Bellmore NY, we are ready to help.',
   'Most orders take 3 to 4 days. Items brought in by 9 AM qualify for same-day service.',
@@ -15,8 +17,8 @@ export default function LaundryNearYou() {
       <ul className="mt-6 space-y-4 lg:mt-7 lg:space-y-5">
         {POINTS.map((point) => (
           <li key={point} className="flex items-start gap-3 sm:gap-4">
-            <img
-              src="/assets/icons/laundryicon2.png"
+            <Img
+              src="/assets/icons/laundryicon2.webp"
               alt=""
               aria-hidden="true"
               className="mt-0.5 h-6 w-6 shrink-0 object-contain sm:h-7 sm:w-7"

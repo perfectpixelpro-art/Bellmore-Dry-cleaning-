@@ -1,5 +1,7 @@
+import Img from './Img'
+
 // Thin line icons for the price rows. Replace with the supplied PNGs by
-// swapping the <svg> for an <img> once the artwork lands in /assets/icons.
+// swapping the <svg> for an <Img> once the artwork lands in /assets/icons.
 const PATHS = {
   shirt: 'M8 3 5 5 3 9l2.5 1.5M16 3l3 2 2 4-2.5 1.5M8 3h8M8 3c0 2 1.8 3 4 3s4-1 4-3M5.5 10.5V21h13V10.5',
   pants: 'M7 3h10v4l-1 14h-3l-1-9-1 9H8L7 7V3Zm0 4h10',

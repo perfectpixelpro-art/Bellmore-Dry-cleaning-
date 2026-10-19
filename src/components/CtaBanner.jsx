@@ -1,3 +1,5 @@
+import Img from './Img'
+
 const PHONE = '(516) 656-1221'
 const PHONE_HREF = 'tel:+15166561221'
 const EMAIL = 'chris@bellmoredrycleaner.com'
@@ -17,7 +19,7 @@ export default function CtaBanner({ image, alt, hotspots = DEFAULT_HOTSPOTS }) {
   return (
     <section className="mx-auto max-w-[1920px] px-5 pb-14 sm:px-8 lg:px-[60px] lg:pb-20 xl:px-[120px] 2xl:px-[250px]">
       <div className="relative overflow-hidden rounded-3xl">
-        <img src={image} alt={alt} loading="lazy" className="w-full" />
+        <Img src={image} alt={alt} loading="lazy" className="w-full" />
 
         <a
           href={PHONE_HREF}
