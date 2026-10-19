@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom'
 const ITEMS = [
   {
     title: 'Shirt Laundering & Laundry Services',
-    to: '/#service',
+    to: '/laundry-services',
     body: (
       <>
         Dress shirts are <strong className="font-bold text-brand">$2.75</strong> each,
@@ -13,7 +13,7 @@ const ITEMS = [
   },
   {
     title: 'Alterations & Custom Tailoring',
-    to: '/#service',
+    to: '/tailoring-alterations',
     body: <>We adjust clothes you already own so they fit better.</>,
   },
   {

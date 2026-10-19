@@ -3,8 +3,8 @@ import { Link } from 'react-router-dom'
 
 const SERVICE_ITEMS = [
   { label: 'Dry Cleaning & Specialty Garment Care', to: '/dry-cleaning' },
-  { label: 'Laundry Services', to: '/#service' },
-  { label: 'Tailoring & Alterations', to: '/#service' },
+  { label: 'Laundry Services', to: '/laundry-services' },
+  { label: 'Tailoring & Alterations', to: '/tailoring-alterations' },
   { label: 'Bridal Gown Cleaning & Preservation', to: '/#service' },
 ]
 

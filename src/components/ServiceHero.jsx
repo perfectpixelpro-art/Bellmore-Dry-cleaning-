@@ -4,11 +4,19 @@ export default function ServiceHero({ titleTop, titleAccent, titleBottom, intro,
       <div className="grid items-center gap-12 lg:grid-cols-2 lg:gap-16 xl:gap-24 2xl:gap-32">
         <div className="max-w-xl">
           <h1 className="h1-service font-extrabold leading-[1.15] tracking-[-0.02em] text-ink">
-            {titleTop}
-            <br />
+            {titleTop && (
+              <>
+                {titleTop}
+                <br />
+              </>
+            )}
             <span className="text-brand">{titleAccent}</span>
-            <br />
-            {titleBottom}
+            {titleBottom && (
+              <>
+                <br />
+                {titleBottom}
+              </>
+            )}
           </h1>
 
           <p className="mt-5 text-[16px] leading-7 text-muted">{intro}</p>
