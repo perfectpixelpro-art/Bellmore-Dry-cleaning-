@@ -1,0 +1,31 @@
+@import url('https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap');
+@import "tailwindcss";
+
+@theme {
+  --font-sans: 'Inter', ui-sans-serif, system-ui, sans-serif;
+
+  --color-brand: #3076ce;
+  --color-brand-dark: #275fa8;
+  --color-brand-soft: #eaf2fb;
+  --color-ink: #0b1220;
+  --color-muted: #4b5563;
+  --color-line: #e8ecf3;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-white text-ink font-sans antialiased;
+}
+
+/* Fluid display headings. Defined here rather than as Tailwind arbitrary
+   values so the clamp() commas survive the class scanner. */
+.h1-hero {
+  font-size: clamp(2rem, 3.6vw, 3.5rem);
+}
+
+.h1-service {
+  font-size: clamp(1.65rem, 3.2vw, 3rem);
+}
