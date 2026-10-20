@@ -12,7 +12,9 @@ export default function Footer() {
       <div className="mx-auto max-w-[1920px] px-5 py-10 sm:px-8 lg:px-[60px] lg:py-12 xl:px-[120px] 2xl:px-[250px]">
         <div className="flex flex-col gap-8 lg:flex-row lg:items-start lg:justify-between">
           <div>
-            <p className="text-[17px] font-bold tracking-[-0.01em]">Bellmore Dry Cleaner</p>
+            <p className="text-[22px] font-bold tracking-[-0.02em] sm:text-[26px] lg:text-[28px]">
+              Bellmore Dry Cleaner
+            </p>
             <p className="mt-2 text-[14px] leading-6 text-white/80">
               1904 Newbridge Road, North Bellmore, NY ·{' '}
               <a href="tel:+15166561221" className="font-semibold underline underline-offset-4 hover:text-white">

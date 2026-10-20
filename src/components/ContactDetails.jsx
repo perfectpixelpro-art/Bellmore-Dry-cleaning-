@@ -14,10 +14,10 @@ export default function ContactDetails() {
           </a>{' '}
           for our store details or help planning your visit. You can also email{' '}
           <a
-            href="mailto:chris@bellmoredrycleaner.com"
+            href="mailto:info@bellmoredrycleaner.com"
             className="font-semibold text-brand hover:underline"
           >
-            chris@bellmoredrycleaner.com
+            info@bellmoredrycleaner.com
           </a>{' '}
           with questions about our dry cleaning, laundry and garment care services.
         </p>

@@ -40,6 +40,10 @@ export const IMAGE_SIZES = {
     "width": 1600,
     "height": 1900
   },
+  "/assets/images/heroshirts.webp": {
+    "width": 1600,
+    "height": 1613
+  },
   "/assets/images/laundry3.webp": {
     "width": 1600,
     "height": 590
@@ -61,8 +65,8 @@ export const IMAGE_SIZES = {
     "height": 1503
   },
   "/assets/images/logo.webp": {
-    "width": 910,
-    "height": 268
+    "width": 1600,
+    "height": 312
   },
   "/assets/images/service1.webp": {
     "width": 1172,

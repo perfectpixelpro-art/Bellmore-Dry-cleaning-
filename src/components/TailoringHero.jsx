@@ -1,3 +1,4 @@
+import { Link } from 'react-router-dom'
 import Img from './Img'
 
 const IMAGES = [
@@ -44,10 +45,8 @@ export default function TailoringHero() {
               Call (516) 656-1221
             </a>
 
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=1904+Newbridge+Road%2C+North+Bellmore%2C+NY+11710"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/#visit"
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-brand/40 px-7 py-3.5 text-[15px] font-semibold text-brand transition-colors hover:bg-brand-soft"
             >
               Get directions
@@ -62,7 +61,7 @@ export default function TailoringHero() {
               >
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
-            </a>
+            </Link>
           </div>
         </div>
 

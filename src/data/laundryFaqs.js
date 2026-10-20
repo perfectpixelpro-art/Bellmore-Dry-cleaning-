@@ -37,6 +37,6 @@ export const LAUNDRY_FAQS = [
   },
   {
     q: 'How can I contact Bellmore Dry Cleaner?',
-    a: 'Call (516) 656-1221 or email chris@bellmoredrycleaner.com. We do not take text messages yet.',
+    a: 'Call (516) 656-1221 or email info@bellmoredrycleaner.com. We do not take text messages yet.',
   },
 ]

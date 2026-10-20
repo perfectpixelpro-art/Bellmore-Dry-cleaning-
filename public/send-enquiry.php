@@ -8,7 +8,7 @@
 declare(strict_types=1);
 
 const RECIPIENTS = [
-    'chris@bellmoredrycleaner.com',
+    'info@bellmoredrycleaner.com',
     'chirag@thesocial99.com',
 ];
 const SENDER   = 'noreply@bellmoredrycleaner.com';

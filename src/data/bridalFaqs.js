@@ -21,7 +21,7 @@ export const BRIDAL_FAQS = [
   },
   {
     q: 'Where can I find a wedding dress cleaner near North Bellmore, NY?',
-    a: 'Bellmore Dry Cleaner provides bridal gown cleaning in North Bellmore, NY, for brides looking for professional gown care. Call (516) 656-1221 or email chris@bellmoredrycleaner.com to enquire about our service.',
+    a: 'Bellmore Dry Cleaner provides bridal gown cleaning in North Bellmore, NY, for brides looking for professional gown care. Call (516) 656-1221 or email info@bellmoredrycleaner.com to enquire about our service.',
   },
   {
     q: 'Do you serve Merrick and Wantagh, NY?',

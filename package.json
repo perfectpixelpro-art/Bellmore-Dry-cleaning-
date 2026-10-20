@@ -7,7 +7,8 @@
     "dev": "vite",
     "build": "vite build",
     "preview": "vite preview",
-    "images": "node scripts/optimize-images.mjs"
+    "images": "node scripts/optimize-images.mjs",
+    "favicon": "node scripts/make-favicon.mjs"
   },
   "dependencies": {
     "react": "^19.2.0",

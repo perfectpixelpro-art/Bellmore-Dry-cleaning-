@@ -2,7 +2,7 @@ import ServiceHero from '../components/ServiceHero'
 import GarmentCare from '../components/GarmentCare'
 import NearbyTowns from '../components/NearbyTowns'
 import OtherServices from '../components/OtherServices'
-import DryCleaningCta from '../components/DryCleaningCta'
+import CtaBanner from '../components/CtaBanner'
 import Faq from '../components/Faq'
 import { DRY_CLEANING_FAQS } from '../data/dryCleaningFaqs'
 import PageMeta from '../components/PageMeta'
@@ -28,7 +28,14 @@ export default function DryCleaning() {
       <NearbyTowns />
       <OtherServices />
       <Faq items={DRY_CLEANING_FAQS} />
-      <DryCleaningCta />
+      <CtaBanner
+        image="/assets/images/DryCleaningsection.webp"
+        alt="Fast, reliable dry cleaning in Bellmore, NY for your busy schedule. Got a suit for Friday or a stack of shirts that need pressing? Bring them in by 9 AM and we can have them ready the same day. Everything else takes 3 to 4 days."
+        hotspots={{
+          call: { left: 2.83, top: 68.14, width: 18.26, height: 12.38 },
+          email: { left: 22.49, top: 68.14, width: 26.62, height: 12.5 },
+        }}
+      />
       </main>
     </>
   )

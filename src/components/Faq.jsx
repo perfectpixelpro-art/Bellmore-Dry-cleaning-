@@ -43,7 +43,7 @@ const HOME_FAQS = [
   },
   {
     q: 'How can I reach you?',
-    a: "Call us at (516) 656-1221 or email chris@bellmoredrycleaner.com. We don't take texts just yet.",
+    a: "Call us at (516) 656-1221 or email info@bellmoredrycleaner.com. We don't take texts just yet.",
   },
   {
     q: 'Are you open on Sundays?',

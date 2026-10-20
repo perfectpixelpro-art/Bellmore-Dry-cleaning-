@@ -37,7 +37,7 @@ export const DRY_CLEANING_FAQS = [
   },
   {
     q: 'How do I reach you?',
-    a: "Call (516) 656-1221 or email chris@bellmoredrycleaner.com. We don't take texts yet.",
+    a: "Call (516) 656-1221 or email info@bellmoredrycleaner.com. We don't take texts yet.",
   },
   {
     q: 'Do you do alterations and wedding gowns?',

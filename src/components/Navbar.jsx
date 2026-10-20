@@ -81,7 +81,7 @@ export default function Navbar() {
     <header className="sticky top-0 z-50 border-b border-line bg-white/90 backdrop-blur">
       <div className="mx-auto flex h-24 max-w-7xl items-center justify-between px-5 lg:px-10">
         <Link to="/" className="shrink-0">
-          <Img src="/assets/images/logo.webp" alt="Bellmore Dry Cleaner" className="h-12 w-auto sm:h-14" />
+          <Img src="/assets/images/logo.webp" alt="Bellmore Dry Cleaner" className="h-14 w-auto sm:h-16" />
         </Link>
 
         <nav className="hidden items-center gap-7 lg:flex xl:gap-8">

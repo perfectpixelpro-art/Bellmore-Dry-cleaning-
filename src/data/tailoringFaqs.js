@@ -37,6 +37,6 @@ export const TAILORING_FAQS = [
   },
   {
     q: 'How can I contact Bellmore Dry Cleaner?',
-    a: "Call (516) 656-1221 or email chris@bellmoredrycleaner.com with questions about services or prices. We don't take texts yet.",
+    a: "Call (516) 656-1221 or email info@bellmoredrycleaner.com with questions about services or prices. We don't take texts yet.",
   },
 ]

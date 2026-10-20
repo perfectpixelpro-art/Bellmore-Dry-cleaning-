@@ -50,7 +50,7 @@ export default function EnquiryForm() {
 
   return (
     <div className="rounded-2xl bg-brand-soft p-5 sm:p-7">
-      <h3 className="text-[20px] font-bold text-ink sm:text-[22px]">Submit your enquiry</h3>
+      <h3 className="text-[20px] font-bold text-ink sm:text-[22px]">Contact us</h3>
 
       <form onSubmit={handleSubmit} className="mt-5 space-y-4">
         <div className="grid gap-4 sm:grid-cols-2">

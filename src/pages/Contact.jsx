@@ -11,7 +11,7 @@ export default function Contact() {
     <>
       <PageMeta
         title="Contact Bellmore Dry Cleaner"
-        description="Call (516) 656-1221 or email chris@bellmoredrycleaner.com. Visit us at 1904 Newbridge Road, North Bellmore, NY."
+        description="Call (516) 656-1221 or email info@bellmoredrycleaner.com. Visit us at 1904 Newbridge Road, North Bellmore, NY."
       />
       <main>
       <ContactHero />

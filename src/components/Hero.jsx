@@ -1,9 +1,9 @@
+import { Link } from 'react-router-dom'
 import Img from './Img'
 
 const HIGHLIGHTS = [
   { icon: '/assets/icons/hero1icon.webp', lines: ['Same day', 'service'] },
   { icon: '/assets/icons/hero2icon.webp', lines: ['Tailor on the', 'premises'] },
-  { icon: '/assets/icons/hero3icon.webp', lines: ['4x on', 'Google'] },
 ]
 
 export default function Hero() {
@@ -31,10 +31,8 @@ export default function Hero() {
               Call (516) 656-1221
             </a>
 
-            <a
-              href="https://www.google.com/maps/search/?api=1&query=1904+Newbridge+Road%2C+North+Bellmore%2C+NY+11710"
-              target="_blank"
-              rel="noreferrer"
+            <Link
+              to="/#visit"
               className="group inline-flex items-center justify-center gap-2 rounded-full border border-brand/40 px-7 py-3.5 text-[15px] font-semibold text-brand transition-colors hover:bg-brand-soft"
             >
               Get directions
@@ -49,7 +47,7 @@ export default function Hero() {
               >
                 <path d="M5 12h14M13 6l6 6-6 6" />
               </svg>
-            </a>
+            </Link>
           </div>
 
           <ul className="mt-12 flex flex-wrap items-center gap-x-6 gap-y-6">
@@ -72,9 +70,9 @@ export default function Hero() {
         </div>
 
         {/* Image */}
-        <div className="relative w-full max-w-[520px] justify-self-center lg:justify-self-end">
+        <div className="w-full max-w-[520px] justify-self-center lg:justify-self-end">
           <Img
-            src="/assets/images/herobell.webp"
+            src="/assets/images/heroshirts.webp"
             alt="Freshly laundered shirts on hangers at Bellmore Dry Cleaner"
             className="w-full rounded-3xl object-cover"
           />

@@ -26,7 +26,7 @@ const COUPONS = [
     body: (
       <>
         Comforter, quilt or blanket cleaning. With a dry cleaning order of{' '}
-        <strong className="font-bold text-ink">$20.00 or more</strong>
+        <strong className="font-bold text-brand">$20.00 or more</strong>
       </>
     ),
     expires: '12/12/2026',

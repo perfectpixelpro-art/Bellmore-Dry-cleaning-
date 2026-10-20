@@ -1,5 +1,5 @@
 const PHONE = '(516) 656-1221'
-const EMAIL = 'chris@bellmoredrycleaner.com'
+const EMAIL = 'info@bellmoredrycleaner.com'
 const ADDRESS = '1904 Newbridge Road, North Bellmore, NY'
 const MAP_HREF = 'https://www.google.com/maps/search/?api=1&query=1904+Newbridge+Road%2C+North+Bellmore%2C+NY+11710'
 
